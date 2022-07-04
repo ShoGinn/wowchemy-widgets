@@ -11,3 +11,4 @@ design:
 
 * [Pricing-Cards Plugin](#pricing-cards)
 * [Instagram-Behold Plugin](#instagram-behold)
+* [Countdown-Timer Plugin](#countdown-timer)

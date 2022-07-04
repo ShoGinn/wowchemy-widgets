@@ -43,6 +43,7 @@ module:
     - path: github.com/wowchemy/wowchemy-hugo-modules/wowchemy/v5
     - path: github.com/shoginn/wowchemy-widgets/widgets/pricing-cards
     - path: github.com/shoginn/wowchemy-widgets/widgets/instagram-behold
+    - path: github.com/shoginn/wowchemy-widgets/widgets/countdown-timer
 
 ############################
 ## ADVANCED
