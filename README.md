@@ -6,6 +6,7 @@
 ## I have developed these Widgets
 1. [Instagram Feed by Behold](widgets/instagram-behold/)
 2. [Pricing Cards](widgets/pricing-cards/)
+3. [Countdown Timer](widgets/countdown-timer/)
 
 
 
