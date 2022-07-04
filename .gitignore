@@ -324,6 +324,6 @@ original/
 .hugo_build.lock
 public/
 vendor/
-resources/
-assets/jsconfig.json
+**/resources/
+**/assets/jsconfig.json
 hugo_stats.json

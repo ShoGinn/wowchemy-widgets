@@ -11,6 +11,30 @@
        - path: github.com/shoginn/wowchemy-widget-pricing-cards
    ```
 
+## Widget parameters defaults
+
+```yaml
+pricing_cards:
+  - name: null
+    description: null
+    currency_symbol: $
+    price: null
+    price_period: null
+    top_icon:
+      - icon_pack: null
+        icon: null
+    items:
+      - name: null
+        icon_pack: null
+        icon: null
+    button:
+      - icon_pack: null
+        icon: null
+        icon_label: null
+        url: null
+```
+
+
 ## Example Implementation
 1. Create an instance of your widget in `home/`, for example let's create `home/pricing.md`:
    ```markdown
@@ -44,12 +68,16 @@
 
    # Pricing Cards Array (Each name creates a box)
    
-   pricing_cards:
-      - name: Unlimited
+    pricing_cards:
+      - name: Et eu dolore incididunt incididunt dolor enim veniam minim.
+        description: Eu et ex laboris in commodo culpa veniam commodo commodo commodo dolore adipisicing.
         price: 100
         price_period: year
+        top_icon:
+          - icon_pack: fas
+            icon: person
         items:
-          - name: Unlimited Stuff for one year
+          - name: Anim irure do culpa in eu qui ullamco pariatur.
             icon_pack: emoji 
             icon: ∞
         button:
@@ -58,11 +86,15 @@
             icon_label: Order Now
             url: /order
 
-      - name: Limited
+      - name: Deserunt aliquip eu esse ex culpa culpa sint enim ut nostrud laborum elit deserunt.
+        description: Exercitation in est deserunt tempor labore aliqua.
         price: 10
         price_period: month
+        top_icon:
+          - icon_pack: fas
+            icon: person
         items:
-          - name: Limited Stuff for one month
+          - name: Veniam excepteur magna do occaecat excepteur ullamco sunt ut officia.
             icon_pack: emoji 
             icon: ⭐️
         button:
@@ -71,8 +103,24 @@
             icon_label: Order Now
             url: /order
 
-   ---
-   
-   # Optional Content below Cards
-   Irure commodo nisi cillum fugiat sunt aliqua tempor voluptate sit reprehenderit cupidatat commodo.
-   ```
+      - name: Aute aute velit Lorem aliqua commodo anim ea excepteur est deserunt.
+        description: Officia qui deserunt nulla consectetur magna consectetur nisi ea incididunt ullamco.
+        price: 10
+        price_period: day
+        currency_symbol: £
+        top_icon:
+          - icon_pack: fas
+            icon: person
+        items:
+          - name: Deserunt voluptate qui adipisicing consectetur ullamco ea anim commodo est consequat fugiat velit eiusmod eiusmod.
+            icon_pack: emoji 
+            icon: 🇬🇧
+        button:
+          - icon_pack: fas
+            icon: calendar-alt
+            icon_label: Order Now
+            url: /order
+
+    ---
+
+    Content Below
