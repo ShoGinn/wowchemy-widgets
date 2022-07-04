@@ -1,8 +1,6 @@
-github.com/shoginn/wowchemy-widgets/widgets/instagram-behold v0.0.0-20220704144453-00725741ff6b h1:wJRKIPad0BXbYnQgI7SlOdi0C3YzbNttOgMidl/8pU8=
-github.com/shoginn/wowchemy-widgets/widgets/instagram-behold v0.0.0-20220704144453-00725741ff6b/go.mod h1:9JEyuZrLvn4YMPZFQYyj0+kSHzCemvrciqZEa6RUA+0=
-github.com/shoginn/wowchemy-widgets/widgets/pricing-cards v0.0.0-20220704144453-00725741ff6b h1:R6ya3e9zX7/WoUcY2KDR2hbdVc7FHg4lk5NCAHW3Mc0=
-github.com/shoginn/wowchemy-widgets/widgets/pricing-cards v0.0.0-20220704144453-00725741ff6b/go.mod h1:cOBKgpVHWvBKFrZZEOATOstdFTnaQuQXfMvvMNtYUL4=
-github.com/wowchemy/wowchemy-hugo-modules/wowchemy-cms/v5 v5.0.0-20220423180919-17d5d3f0ca43 h1:p6ln1ioL16uDrsdWZkZTABRMHKgY1F9S/yEGyQe3hKM=
-github.com/wowchemy/wowchemy-hugo-modules/wowchemy-cms/v5 v5.0.0-20220423180919-17d5d3f0ca43/go.mod h1:Sp/AKo+2HAPi/IPHp1MEdKPmee+mzO5+efUBUPLPqPE=
+github.com/shoginn/wowchemy-widgets/widgets/instagram-behold v0.0.0-20220704204704-cc745b2170df h1:O2w5Mz+L1tMudDoP2ia+yXv4+7Yt8Je2HIO1JYhX9To=
+github.com/shoginn/wowchemy-widgets/widgets/instagram-behold v0.0.0-20220704204704-cc745b2170df/go.mod h1:9JEyuZrLvn4YMPZFQYyj0+kSHzCemvrciqZEa6RUA+0=
+github.com/shoginn/wowchemy-widgets/widgets/pricing-cards v0.0.0-20220704204704-cc745b2170df h1:xgvgynUoD0TOklX5isYGXcntviczEUwoUazv/Bm+314=
+github.com/shoginn/wowchemy-widgets/widgets/pricing-cards v0.0.0-20220704204704-cc745b2170df/go.mod h1:cOBKgpVHWvBKFrZZEOATOstdFTnaQuQXfMvvMNtYUL4=
 github.com/wowchemy/wowchemy-hugo-modules/wowchemy/v5 v5.0.0-20220423180919-17d5d3f0ca43 h1:V7AKJ/rPhoFcFmaZoTiVRgEf2QrBxsh7zp42IykV5mg=
 github.com/wowchemy/wowchemy-hugo-modules/wowchemy/v5 v5.0.0-20220423180919-17d5d3f0ca43/go.mod h1:2iL9rdrUYyJXX2BeHKfK+QbqZlubCsaR60nQ87NRQTY=
