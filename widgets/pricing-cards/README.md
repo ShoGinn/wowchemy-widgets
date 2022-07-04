@@ -44,7 +44,7 @@
 
    # Pricing Cards Array (Each name creates a box)
    
-   pricing-cards:
+   pricing_cards:
       - name: Unlimited
         price: 100
         price_period: year

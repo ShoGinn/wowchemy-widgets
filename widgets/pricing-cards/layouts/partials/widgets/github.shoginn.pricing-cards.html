@@ -21,7 +21,7 @@
     </div>
   {{ end }}
 
-  {{ $total_cards := len $page.Params.pricing-cards }}
+  {{ $total_cards := len $page.Params.pricing_cards }}
   {{ $mod := modBool $total_cards 3 }}
   {{ $card_size := "col-md-4" }}
   {{ if eq $total_cards 1 }}
@@ -35,7 +35,7 @@
     {{ end }}
   {{ end }}
 
-  {{ range $page.Params.pricing-cards }}
+  {{ range $page.Params.pricing_cards }}
     <div class="col-12 {{ $card_size }} d-flex">
       <div class="card flex-fill">
         {{ with .top_icon }}
@@ -67,7 +67,9 @@
             <ul class="fa-ul text-left">
               {{ range . }}
                 <li>
-                  <div class="fa-li">{{- partial "functions/github.shoginn.get_icon" (dict "context" .) -}}</div>
+                  <div class="fa-li">
+                    {{- partial "functions/github.shoginn.get_icon" (dict "context" .) -}}
+                  </div>
                   <b>{{ .name | markdownify | emojify }}</b>
                 </li>
               {{ end }}
