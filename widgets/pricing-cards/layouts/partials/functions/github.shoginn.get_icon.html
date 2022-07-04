@@ -1,0 +1,30 @@
+{{/* Function to get the appropriate icon depending on chosen icon pack. */}}
+{{/* Assign icon as fontawesome icon by default */}}
+{{- $extra_class := .extra_class -}}
+{{- $pack := or .context.icon_pack "fas" -}}
+{{- $pack_prefix := $pack -}}
+{{- if in (slice "fab" "fas" "far" "fal") $pack -}}
+  {{- $pack_prefix = "fa" -}}
+{{- end -}}
+{{- with .context.icon -}}
+  {{/* If icon is an emoji */}}
+  {{- if eq $pack "emoji" -}}
+    {{- . | emojify -}}
+  {{- else if eq $pack "custom" -}}
+    {{/* If icon is a custom svg */}}
+    {{- $svg_icon := resources.Get (printf "media/icons/%s.svg" .) -}}
+    {{- if $svg_icon -}}
+      <img
+        src="{{ $svg_icon.RelPermalink }}"
+        alt="{{ . }}"
+        class="svg-icon svg-baseline"
+        loading="lazy"
+      />
+    {{- end -}}
+  {{- else -}}
+    <i
+      class="{{ $pack }} {{ $pack_prefix }}-{{ . }} {{ $extra_class }}"
+      aria-hidden="true"
+    ></i>
+  {{- end -}}
+{{- end -}}

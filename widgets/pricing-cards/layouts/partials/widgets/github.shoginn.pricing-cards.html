@@ -1,0 +1,121 @@
+{{ $page := .root }}
+{{ $page := .page }}
+
+
+<div class="row pricing">
+  {{ with $page.Title }}
+    <div class="col-md-12 section-heading text-center">
+      <h1>{{ . | markdownify | emojify }}</h1>
+      {{ if $page.Params.subtitle }}
+        <p>
+          {{ $page.Params.subtitle | markdownify | emojify }}
+        </p>
+        <br />
+      {{ end }}
+    </div>
+  {{ end }}
+
+  {{ with $page.Content }}
+    <div class="col-md-12">
+      {{ . | markdownify | emojify }}
+    </div>
+  {{ end }}
+
+  {{ $total_cards := len $page.Params.pricing-cards }}
+  {{ $mod := modBool $total_cards 3 }}
+  {{ $card_size := "col-md-4" }}
+  {{ if eq $total_cards 1 }}
+    {{ $card_size = "col-md-12" }}
+  {{ end }}
+  {{ if gt $total_cards 1 }}
+    {{ if $mod }}
+      {{ $card_size = "col-md-4" }}
+    {{ else }}
+      {{ $card_size = "col-md-6" }}
+    {{ end }}
+  {{ end }}
+
+  {{ range $page.Params.pricing-cards }}
+    <div class="col-12 {{ $card_size }} d-flex">
+      <div class="card flex-fill">
+        {{ with .top_icon }}
+          {{ range . }}
+            <div class="card-img-top">
+              {{- partial "functions/github.shoginn.get_icon" (dict "context" .) -}}
+            </div>
+          {{ end }}
+        {{ end }}
+        <div class="card-body d-flex flex-column">
+          <h3 class="card-title text-muted text-center text-uppercase">
+            {{- .name | markdownify | emojify -}}
+          </h3>
+          {{- $currency_symbol := or .currency_symbol "$" -}}
+          {{- if .price -}}
+            <h4 class="card-price text-center">
+              {{- $currency_symbol -}}{{- .price | markdownify | emojify -}}
+              {{- with .price_period -}}
+                <span class="period">/{{- . | markdownify | emojify -}}</span>
+              {{- end -}}
+            </h4>
+          {{ end }}
+          <div><hr /></div>
+          {{ with .description }}
+            <p class="card-text">{{ . | markdownify | emojify }}</p>
+          {{ end }}
+          {{/* These are the items listed in this card: */}}
+          {{ with .items }}
+            <ul class="fa-ul text-left">
+              {{ range . }}
+                <li>
+                  <div class="fa-li">{{- partial "functions/github.shoginn.get_icon" (dict "context" .) -}}</div>
+                  <b>{{ .name | markdownify | emojify }}</b>
+                </li>
+              {{ end }}
+            </ul>
+          {{ end }}
+          {{/* Add button -- uses shortcode from hero.md */}}
+          {{ with .button }}
+            {{ range . }}
+              {{ if .url }}
+                {{ $btn_link := .url }}
+                {{ $btn_scheme := (urls.Parse $btn_link).Scheme }}
+                {{ $btn_target := "" }}
+                {{ if not $btn_scheme }}
+                  {{ $btn_link = $btn_link | relLangURL }}
+                {{ else if in (slice "http" "https") $btn_scheme }}
+                  {{ $btn_target = "target=\"_blank\" rel=\"noopener\"" }}
+                {{ end }}
+                {{ $btn_label := .icon_label }}
+                <div class="card-btn mt-auto">
+                  <a
+                    href="{{ $btn_link | safeURL }}"
+                    {{ $btn_target | safeHTMLAttr }}
+                    class="btn btn-primary btn-lg mb-3 mb-md-1"
+                  >
+                    {{- partial "functions/github.shoginn.get_icon" (dict "extra_class" "pr-1" "context" .) -}}
+                    {{- $btn_label | markdownify | emojify | safeHTML -}}
+                  </a>
+                </div>
+              {{ end }}
+            {{ end }}
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  {{ end }}
+</div>
+
+{{/* Add the custom CSS */}}
+{{ $css_options := dict "targetPath" "css/pricing_cards.css" }}
+{{- if hugo.IsProduction -}}
+  {{- $css_options = merge $css_options (dict "outputStyle" "compressed") -}}
+{{- end -}}
+{{ $sass_template := resources.Get "scss/pricingcards.scss" }}
+{{ $style := $sass_template | resources.ExecuteAsTemplate "pricingparsed.scss" . | toCSS $css_options }}
+{{- if hugo.IsProduction -}}
+  {{- $style = $style | minify -}}
+{{- end -}}
+{{- if hugo.IsProduction -}}
+  {{- $style = $style | fingerprint "md5" -}}
+{{- end -}}
+<link rel="stylesheet" href="{{ $style.RelPermalink }}" />
