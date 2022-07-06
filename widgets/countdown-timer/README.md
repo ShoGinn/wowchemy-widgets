@@ -2,6 +2,8 @@
 
 **A Countdown Timer widget section for the [Hugo](https://gohugo.io) theme [Wowchemy](https://wowchemy.com)**
 
+This is a very simple plugin that just displays a countdown!
+
 ## Add the Widget to your Site
 
 1. Install the widget by referencing it in your `config/_defaults/config.yaml`:
