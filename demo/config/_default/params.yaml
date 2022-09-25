@@ -7,7 +7,7 @@
 
 appearance:
   theme_day: "custom"
-  theme_night:
+  theme_night: "custom"
   font: minimal
   font_size: L
 
@@ -31,7 +31,7 @@ marketing:
 
 header:
   navbar:
-    enable: false
+    enable: true
     align: r
     show_logo: false
     show_language: false
