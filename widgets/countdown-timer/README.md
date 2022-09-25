@@ -7,6 +7,7 @@ This is a very simple plugin that just displays a countdown!
 ## Add the Widget to your Site
 
 1. Install the widget by referencing it in your `config/_defaults/config.yaml`:
+
    ```yaml
    module:
      imports:
@@ -14,7 +15,9 @@ This is a very simple plugin that just displays a countdown!
    ```
 
 ## Example Implementation
+
 1. Create an instance of your widget in `home/`, for example let's create `home/countdown-timer.md`:
+
    ```markdown
    ---
    widget: 'github.shoginn.countdown-timer'

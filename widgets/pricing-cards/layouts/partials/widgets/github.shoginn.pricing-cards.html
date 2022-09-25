@@ -110,8 +110,8 @@
 {{- if hugo.IsProduction -}}
   {{- $css_options = merge $css_options (dict "outputStyle" "compressed") -}}
 {{- end -}}
-{{ $sass_template := resources.Get "scss/pricingcards.scss" }}
-{{ $style := $sass_template | resources.ExecuteAsTemplate "pricingparsed.scss" . | toCSS $css_options }}
+{{ $sass_template := resources.Get "scss/pricing_cards.scss" }}
+{{ $style := $sass_template | resources.ExecuteAsTemplate "pricing_parsed.scss" . | toCSS $css_options }}
 {{- if hugo.IsProduction -}}
   {{- $style = $style | minify -}}
 {{- end -}}

@@ -5,6 +5,7 @@
 ## Add the Widget to your Site
 
 1. Install the widget by referencing it in your `config/_defaults/config.yaml`:
+
    ```yaml
    module:
      imports:
@@ -34,9 +35,10 @@ pricing_cards:
         url: null
 ```
 
-
 ## Example Implementation
+
 1. Create an instance of your widget in `home/`, for example let's create `home/pricing.md`:
+
    ```markdown
    ---
    widget: 'github.shoginn.pricing-cards'
@@ -124,3 +126,4 @@ pricing_cards:
     ---
 
     Content Below
+  
