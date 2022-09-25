@@ -42,14 +42,18 @@ pricing_cards:
         icon_label: Order Now
         url: /order
 
-  - name: Aute aute velit Lorem aliqua commodo anim ea excepteur est deserunt.
-    description: Officia qui deserunt nulla consectetur magna consectetur nisi ea incididunt ullamco.
+  - name: This card has a disabled hover effect, as well as the default horizontal rule!
+    default_hr: true
+    hover_disabled: true
+    description: I also changed the size of the icon! See the font-awesome css ref
     price: 10
     price_period: day
-    currency_symbol: £
+    currency_symbol: €
+    currency_suffix: true
     top_icon:
       - icon_pack: fas
         icon: person
+        icon_css: fa-xl
     items:
       - name: Deserunt voluptate qui adipisicing consectetur ullamco ea anim commodo est consequat fugiat velit eiusmod eiusmod.
         icon_pack: emoji 

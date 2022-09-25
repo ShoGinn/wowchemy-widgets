@@ -37,7 +37,7 @@
 
   {{ range $page.Params.pricing_cards }}
     <div class="col-12 pt-5 {{ $card_size }} d-flex">
-      <div class="card flex-fill">
+      <div class="card {{ if .hover_disabled }}nohover{{ end }} flex-fill">
         {{ range .top_icon }}
           <div class="card-img-top">
             {{- partial "functions/github.shoginn.get_icon" (dict "context" .) -}}
@@ -48,9 +48,15 @@
             {{- .name | markdownify | emojify -}}
           </h3>
           {{- $currency_symbol := or .currency_symbol "$" -}}
+          {{- $currency_suffix := or .currency_suffix false -}}
           {{- if .price -}}
             <h4 class="card-price text-center">
-              {{- $currency_symbol -}}{{- .price | markdownify | emojify -}}
+              {{ if not $currency_suffix -}}
+                {{- $currency_symbol -}}
+              {{ end }}{{- .price | markdownify | emojify -}}
+              {{ if $currency_suffix -}}
+                {{- $currency_symbol -}}
+              {{ end }}
               {{- if .price_period -}}
                 <span class="period"
                   >/{{- .price_period | markdownify | emojify -}}</span
@@ -58,7 +64,11 @@
               {{- end -}}
             </h4>
           {{ end }}
-          <div><hr /></div>
+          {{- if .default_hr -}}
+            <div class="hr-default"></div>
+          {{ else }}
+            <div><hr /></div>
+          {{ end }}
           {{ with .description }}
             <p class="card-text">{{ . | markdownify | emojify }}</p>
           {{ end }}

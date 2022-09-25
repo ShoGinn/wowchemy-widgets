@@ -1,6 +1,7 @@
 {{/* Function to get the appropriate icon depending on chosen icon pack. */}}
 {{/* Assign icon as fontawesome icon by default */}}
 {{- $extra_class := .extra_class -}}
+{{- $icon_css := .context.icon_css -}}
 {{- $pack := or .context.icon_pack "fas" -}}
 {{- $pack_prefix := $pack -}}
 {{- if in (slice "fab" "fas" "far" "fal") $pack -}}
@@ -23,7 +24,7 @@
     {{- end -}}
   {{- else -}}
     <i
-      class="{{ $pack }} {{ $pack_prefix }}-{{ . }} {{ $extra_class }}"
+      class="{{ $pack }} {{ $pack_prefix }}-{{ . }} {{ $extra_class -}} {{ $icon_css }}"
       aria-hidden="true"
     ></i>
   {{- end -}}
