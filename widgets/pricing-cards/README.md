@@ -72,7 +72,7 @@ pricing_cards:
    # Currency defaults to USD ($)
    
    # Icon Packs Can be any of the icon packs supported by wowchemy 
-   # (Emoji, fas, fab, custom SVG)
+   # (Emoji, fas, fab, custom SVG, OR image)
 
    # Pricing Cards Array (Each name creates a box)
 

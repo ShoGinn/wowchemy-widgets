@@ -23,6 +23,21 @@
         loading="lazy"
       />
     {{- end -}}
+  {{- else if eq $pack "image" -}}
+    {{/* If the request is to have an image */}}
+    {{/* Otherwise fall back the image file specified in front matter */}}
+    {{ $filename := . }}
+    {{/* n `assets/media/` folder */}}
+    {{ $image := resources.GetMatch (path.Join "media" $filename) }}
+    {{ $image := $image.Resize "550x webp" }}
+    <img
+      src="{{ $image.RelPermalink }}"
+      height="{{ $image.Height }}"
+      width="{{ $image.Width }}"
+      alt="{{ . }}"
+      class="img-responsive"
+      loading="lazy"
+    />
   {{- else -}}
     <i
       class="{{ $pack }} {{ $pack_prefix }}-{{ . }} {{ $extra_class -}} {{ $icon_css }}"
