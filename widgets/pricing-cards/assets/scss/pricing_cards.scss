@@ -26,6 +26,17 @@
   hr {
     margin: 1.5rem 0;
   }
+
+  .hr-default {
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+    width: 100%;
+  }
   .card-img-top {
     font-size: 3rem;
     text-align: center;
@@ -71,7 +82,7 @@
 }
 
 @media (min-width: 992px) {
-  .pricing .card:hover {
+  .pricing .card:not(.nohover):hover {
     margin-top: -0.25rem;
     margin-bottom: 0.25rem;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);

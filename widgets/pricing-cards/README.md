@@ -17,20 +17,26 @@
 ```yaml
 pricing_cards:
   - name: null
+    default_hr: false
+    hover_disabled: false
     description: null
     currency_symbol: $
+    currency_suffix: false
     price: null
     price_period: null
     top_icon:
       - icon_pack: null
         icon: null
+        icon_css: null
     items:
       - name: null
         icon_pack: null
         icon: null
+        icon_css: null
     button:
       - icon_pack: null
         icon: null
+        icon_css: null
         icon_label: null
         url: null
 ```
@@ -106,13 +112,17 @@ pricing_cards:
             url: /order
 
       - name: Aute aute velit Lorem aliqua commodo anim ea excepteur est deserunt.
+        default_hr: true
+        hover_disabled: true
         description: Officia qui deserunt nulla consectetur magna consectetur nisi ea incididunt ullamco.
         price: 10
         price_period: day
-        currency_symbol: £
+        currency_symbol: €
+        currency_suffix: true
         top_icon:
           - icon_pack: fas
             icon: person
+            icon_css: fa-xl
         items:
           - name: Deserunt voluptate qui adipisicing consectetur ullamco ea anim commodo est consequat fugiat velit eiusmod eiusmod.
             icon_pack: emoji 
