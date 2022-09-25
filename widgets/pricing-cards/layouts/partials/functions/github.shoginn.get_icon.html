@@ -19,6 +19,7 @@
         src="{{ $svg_icon.RelPermalink }}"
         alt="{{ . }}"
         class="svg-icon svg-baseline"
+        {{ if $icon_css }}style="{{- $icon_css | safeCSS -}}"{{- end -}}
         loading="lazy"
       />
     {{- end -}}

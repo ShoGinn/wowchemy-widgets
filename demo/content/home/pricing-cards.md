@@ -30,8 +30,9 @@ pricing_cards:
     price: 10
     price_period: month
     top_icon:
-      - icon_pack: fas
-        icon: person
+      - icon_pack: custom
+        icon: test-tube
+        icon_css: width:100px;height:100px;
     items:
       - name: Veniam excepteur magna do occaecat excepteur ullamco sunt ut officia.
         icon_pack: emoji 
