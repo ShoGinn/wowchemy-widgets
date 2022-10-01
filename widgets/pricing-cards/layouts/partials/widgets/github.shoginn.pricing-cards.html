@@ -4,7 +4,7 @@
 
 <div class="row pricing">
   {{ with $page.Title }}
-    <div class="col-md-12 section-heading text-center">
+    <div class="w-100 section-heading text-center">
       <h1>{{ . | markdownify | emojify }}</h1>
       {{ if $page.Params.subtitle }}
         <p>
@@ -16,27 +16,13 @@
   {{ end }}
 
   {{ with $page.Content }}
-    <div class="col-md-12 pb-5">
+    <div class="w-100 pb-5">
       {{ . | markdownify | emojify }}
     </div>
   {{ end }}
 
-  {{ $total_cards := len $page.Params.pricing_cards }}
-  {{ $mod := modBool $total_cards 3 }}
-  {{ $card_size := "col-md-4" }}
-  {{ if eq $total_cards 1 }}
-    {{ $card_size = "col-md-12" }}
-  {{ end }}
-  {{ if gt $total_cards 1 }}
-    {{ if $mod }}
-      {{ $card_size = "col-md-4" }}
-    {{ else }}
-      {{ $card_size = "col-md-6" }}
-    {{ end }}
-  {{ end }}
-
   {{ range $page.Params.pricing_cards }}
-    <div class="{{ $card_size }} d-flex">
+    <div class="col-md d-flex">
       <div class="card {{ if .hover_disabled }}nohover{{ end }} flex-fill">
         {{ range .top_icon }}
           <div class="card-img-top">
@@ -50,7 +36,7 @@
           {{- $currency_symbol := or .currency_symbol "$" -}}
           {{- $currency_suffix := or .currency_suffix false -}}
           {{- if .price -}}
-            <h4 class="card-price text-center">
+            <h4 class="card-price text-center text-nowrap text-uppercase">
               {{ if not $currency_suffix -}}
                 {{- $currency_symbol -}}
               {{ end }}{{- .price | markdownify | emojify -}}
