@@ -16,7 +16,7 @@
   {{ end }}
 
   {{ with $page.Content }}
-    <div class="col-md-12">
+    <div class="col-md-12 pb-5">
       {{ . | markdownify | emojify }}
     </div>
   {{ end }}
@@ -36,7 +36,7 @@
   {{ end }}
 
   {{ range $page.Params.pricing_cards }}
-    <div class="col-12 pt-5 {{ $card_size }} d-flex">
+    <div class="{{ $card_size }} d-flex">
       <div class="card {{ if .hover_disabled }}nohover{{ end }} flex-fill">
         {{ range .top_icon }}
           <div class="card-img-top">
