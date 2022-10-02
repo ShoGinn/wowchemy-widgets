@@ -71,14 +71,16 @@
     ]
   },
   "devDependencies": {
-    "cspell": "^6.8.1",
-    "html-validate": "^7.3.3",
+    "@commitlint/cli": "^17.1.2",
+    "@commitlint/config-conventional": "^17.1.0",
+    "cspell": "^6.12.0",
+    "html-validate": "^7.5.0",
     "html-validate-markdown": "^3.0.0",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
-    "rimraf": "^3.0.2",
-    "run-script-os": "^1.1.6",
     "prettier": "^2.7.1",
-    "prettier-plugin-go-template": "^0.0.13"
+    "prettier-plugin-go-template": "^0.0.13",
+    "rimraf": "^3.0.2",
+    "run-script-os": "^1.1.6"
   }
 }
