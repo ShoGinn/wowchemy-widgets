@@ -1,7 +1,6 @@
 {{ $page := .root }}
 {{ $page := .page }}
 
-
 <div class="row pricing">
   {{ with $page.Title }}
     <div class="w-100 section-heading text-center">
@@ -22,8 +21,13 @@
   {{ end }}
 
   {{ range $page.Params.pricing_cards }}
-    <div class="col-md d-flex">
-      <div class="card {{ if .hover_disabled }}nohover{{ end }} flex-fill">
+    {{ if isset $page.Params "max_card_columns" }}
+      {{ $max_cards := div 12 $page.Params.max_card_columns }}
+      <div class="col-md-{{ $max_cards }} d-flex">
+    {{ else }}
+      <div class="col-md d-flex">
+    {{ end }}
+        <div class="card {{ if .hover_disabled }}nohover{{ end }} flex-fill">
         {{ range .top_icon }}
           <div class="card-img-top">
             {{- partial "functions/github.shoginn.get_icon" (dict "context" .) -}}
@@ -109,9 +113,6 @@
 {{ $sass_template := resources.Get "scss/pricing_cards.scss" }}
 {{ $style := $sass_template | resources.ExecuteAsTemplate "pricing_parsed.scss" . | toCSS $css_options }}
 {{- if hugo.IsProduction -}}
-  {{- $style = $style | minify -}}
-{{- end -}}
-{{- if hugo.IsProduction -}}
-  {{- $style = $style | fingerprint "md5" -}}
+  {{- $style = $style | minify | fingerprint "md5" -}}
 {{- end -}}
 <link rel="stylesheet" href="{{ $style.RelPermalink }}" />

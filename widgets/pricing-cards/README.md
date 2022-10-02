@@ -15,6 +15,8 @@
 ## Widget parameters defaults
 
 ```yaml
+max_card_columns: null
+
 pricing_cards:
   - name: null
     default_hr: false
@@ -43,96 +45,98 @@ pricing_cards:
 
 ## Example Implementation
 
-1. Create an instance of your widget in `home/`, for example let's create `home/pricing.md`:
+### Create an instance of your widget in `home/`, for example let's create `home/pricing.md`:
 
-   ```markdown
-   ---
-   widget: 'github.shoginn.pricing-cards'
+```yaml
+---
+widget: 'github.shoginn.pricing-cards'
 
-   # This file represents a page section.
-   headless: true
+# This file represents a page section.
+headless: true
 
-   # Order that this section appears on the page.
-   weight: 1
+# Order that this section appears on the page.
+weight: 1
 
-   # Title at the top of the Section
-   title: Our Prices
+# Title at the top of the Section
+title: Our Prices
 
-   # Subtitle
-   subtitle: What do I get for that price?
+# Subtitle
+subtitle: What do I get for that price?
 
-   # Design
-   design:
-      columns: '1'
+# Maximum number of cards wide (Defaults to flex aka no number)
 
-   ############################
-   # Widget Configuration Items
-   ############################
+max_card_columns: 4
 
-   # Currency defaults to USD ($)
-   
-   # Icon Packs Can be any of the icon packs supported by wowchemy 
-   # (Emoji, fas, fab, custom SVG, OR image)
+############################
+# Widget Configuration Items
+############################
 
-   # Pricing Cards Array (Each name creates a box)
+# Currency defaults to USD ($)
 
-  pricing_cards:
-    - name: Et eu dolore incididunt incididunt dolor enim veniam minim.
-      description: Eu et ex laboris in commodo culpa veniam commodo commodo commodo dolore adipisicing.
-      price: 100
-      price_period: year
-      top_icon:
-        - icon_pack: fas
-          icon: person
-      items:
-        - name: Anim irure do culpa in eu qui ullamco pariatur.
-          icon_pack: emoji
-          icon: ∞
-      button:
-        - icon_pack: fas
-          icon: calendar-alt
-          icon_label: Order Now
-          url: /order
-    - name: Deserunt aliquip eu esse ex culpa culpa sint enim ut nostrud laborum elit deserunt.
-      description: Exercitation in est deserunt tempor labore aliqua.
-      price: 10
-      price_period: month
-      top_icon:
-        - icon_pack: custom
-          icon: test-tube
-          icon_css: width:100px;height:100px;
-      items:
-        - name: Veniam excepteur magna do occaecat excepteur ullamco sunt ut officia.
-          icon_pack: emoji
-          icon: ⭐️
-      button:
-        - icon_pack: fas
-          icon: calendar-alt
-          icon_label: Order Now
-          url: /order
-    - name: This card has a disabled hover effect, as well as the default horizontal rule!
-      default_hr: true
-      hover_disabled: true
-      description: I also changed the size of the icon! See the font-awesome css ref
-      price: 10
-      price_period: day
-      currency_symbol: €
-      currency_suffix: true
-      top_icon:
-        - icon_pack: fas
-          icon: person
-          icon_css: fa-xl
-      items:
-        - name: Deserunt voluptate qui adipisicing consectetur ullamco ea anim commodo est consequat fugiat velit eiusmod eiusmod.
-          icon_pack: emoji
-          icon: 🇬🇧
-      button:
-        - icon_pack: fas
-          icon: calendar-alt
-          icon_label: Order Now
-          url: /order
+# Icon Packs Can be any of the icon packs supported by wowchemy 
+# (Emoji, fas, fab, custom SVG, OR image)
 
-  ---
+# Pricing Cards Array (Each name creates a box)
 
-  Content Below
+pricing_cards:
+  - name: Et eu dolore incididunt incididunt dolor enim veniam minim.
+    description: Eu et ex laboris in commodo culpa veniam commodo commodo commodo dolore adipisicing.
+    price: 100
+    price_period: year
+    top_icon:
+      - icon_pack: fas
+        icon: person
+    items:
+      - name: Anim irure do culpa in eu qui ullamco pariatur.
+        icon_pack: emoji
+        icon: ∞
+    button:
+      - icon_pack: fas
+        icon: calendar-alt
+        icon_label: Order Now
+        url: /order
+
+  - name: Deserunt aliquip eu esse ex culpa culpa sint enim ut nostrud laborum elit deserunt.
+    description: Exercitation in est deserunt tempor labore aliqua.
+    price: 10
+    price_period: month
+    top_icon:
+      - icon_pack: custom
+        icon: test-tube
+        icon_css: width:100px;height:100px;
+    items:
+      - name: Veniam excepteur magna do occaecat excepteur ullamco sunt ut officia.
+        icon_pack: emoji
+        icon: ⭐️
+    button:
+      - icon_pack: fas
+        icon: calendar-alt
+        icon_label: Order Now
+        url: /order
+
+  - name: This card has a disabled hover effect, as well as the default horizontal rule!
+    default_hr: true
+    hover_disabled: true
+    description: I also changed the size of the icon! See the font-awesome css ref
+    price: 10
+    price_period: day
+    currency_symbol: €
+    currency_suffix: true
+    top_icon:
+      - icon_pack: fas
+        icon: person
+        icon_css: fa-xl
+    items:
+      - name: Deserunt voluptate qui adipisicing consectetur ullamco ea anim commodo est consequat fugiat velit eiusmod eiusmod.
+        icon_pack: emoji
+        icon: 🇬🇧
+    button:
+      - icon_pack: fas
+        icon: calendar-alt
+        icon_label: Order Now
+        url: /order
+
+---
+
+Content Below
   
