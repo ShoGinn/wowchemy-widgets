@@ -3,7 +3,6 @@ widget: github.shoginn.pricing-cards
 headless: true
 title: This helps show what an image card looks like
 subtitle: And how its sized
-weight: 26
 
 pricing_cards:
   - name: Just a test image
