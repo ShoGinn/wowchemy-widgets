@@ -3,7 +3,6 @@ widget: github.shoginn.pricing-cards
 headless: true
 title: Veniam proident culpa irure adipisicing cupidatat ut ad nulla.
 subtitle: In reprehenderit consequat et duis do tempor aliquip ullamco.
-weight: 25
 
 pricing_cards:
   - name: Et eu dolore incididunt incididunt dolor enim veniam minim.
@@ -64,9 +63,3 @@ pricing_cards:
         url: /order
 
 ---
-
-Cillum fugiat nulla consectetur eiusmod. Nulla consectetur labore anim minim dolore cillum. Ipsum ipsum dolore voluptate adipisicing non enim sit eu nostrud. Eiusmod eiusmod est culpa est sit voluptate sint ea. Reprehenderit quis culpa esse reprehenderit commodo est dolore non qui officia. Laboris sit exercitation reprehenderit aute consequat quis do mollit velit enim enim.
-
-Et qui dolore ex ut deserunt culpa non non non. Sunt aliquip velit esse consequat. Lorem officia non voluptate ut qui labore veniam mollit. Esse anim eu fugiat et quis. Dolore enim pariatur dolor est commodo aute elit ut id ea cillum. Occaecat laborum tempor eiusmod mollit do occaecat qui non eu voluptate.
-
-Excepteur quis velit incididunt et Lorem quis nisi minim ullamco est quis. Dolor mollit qui ex veniam tempor ex reprehenderit. Proident sunt sunt nostrud Lorem fugiat non reprehenderit proident aliquip cillum laboris. Ad ullamco pariatur duis eiusmod. Proident exercitation exercitation elit aute ut. Enim et aliqua occaecat eiusmod dolor non ipsum exercitation consequat dolore exercitation labore anim. Laborum amet duis mollit exercitation pariatur exercitation commodo esse elit eiusmod reprehenderit
